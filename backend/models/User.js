@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
   fullName: String,
   email: { type: String, unique: true },
   connections: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  Projects: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   bio: String,
   communities: [{ type: mongoose.Schema.Types.ObjectId, ref: "Community" }],
   joinedAt: { type: Date, default: Date.now },
