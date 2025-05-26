@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./config/db");
+const connectionRoutes = require('./routes/connectionRoutes');
 
 dotenv.config();
 
@@ -26,6 +27,9 @@ app.use("/api/notifications", require("./routes/notificationRoutes"));
 app.use("/api/projects", require("./routes/projectRoutes"));
 app.use("/api/plans", require("./routes/planRouts"));
 app.use("/api/subscriptions", require("./routes/subscriptionRoutes"));
+app.use("/api/connections", require("./routes/connectionRoutes"));
+
+
 
 // Default route
 app.get("/", (req, res) => {
